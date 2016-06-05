@@ -1,10 +1,11 @@
 = form_tag root_path, method: :get do
-  = label(:amount, "Numbers per page")
-  = text_field_tag :amount, params[:amount]
+  = label(:amount, "Numbers per page: ")
+  = text_field_tag :amount, params[:amount] || 100
   br
-  = label(:page, "Page")
-  = text_field_tag :page, params[:page]
-  = submit_tag 'Change'
+  = label(:page, "Page: ")
+  = text_field_tag :page, params[:page] || 1
+  br
+  = submit_tag 'Change settings'
 
 ul
   - @numbers.each do |obj|
