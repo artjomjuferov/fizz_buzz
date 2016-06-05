@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: pguser
+  password: d
+
+development:
+  <<: *default
+  database: fizz_buzz_development
+
+test:
+  <<: *default
+  database: fizz_buzz_test

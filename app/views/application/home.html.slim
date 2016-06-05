@@ -1,0 +1,13 @@
+= form_tag root_path, method: :get do
+  = label(:amount, "Numbers per page")
+  = text_field_tag :amount, params[:amount]
+  br
+  = label(:page, "Page")
+  = text_field_tag :page, params[:page]
+  = submit_tag 'Change'
+
+ul
+  - @numbers.each do |obj|
+    li
+      p ="#{obj[:number]} #{obj[:name]}"
+      p =favorite(obj[:is_favorite], obj[:number])
